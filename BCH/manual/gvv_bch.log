@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  4 FEB 2019 12:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  4 FEB 2019 12:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1302,25 +1302,27 @@ File: tlc.eps Graphic file (type eps)
 
 
 
-LaTeX Warning: Reference `eq:opt_mse' on page 1 undefined on input line 332.
+LaTeX Warning: Reference `eq:opt_mse' on page 1 undefined on input line 336.
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 334--335
+Underfull \vbox (badness 3895) has occurred while \output is active []
+
+ [1
+
+
+]
+Underfull \hbox (badness 1975) in paragraph at lines 338--339
 []\OT1/txr/m/n/12 Repeat the ex-er-cise for the least squares
  []
 
-[1
-
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 337.
- [2
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 341.
+[2
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 337.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 341.
  (./gvv_bch.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 337.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 337.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 341.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 341.
 Package rerunfilecheck Info: File `gvv_bch.out' has not changed.
 (rerunfilecheck)             Checksum: E040CF8288E40E56D5EFEBFD7B9B7615;94.
 
@@ -1329,12 +1331,12 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 23937 strings out of 494591
- 471980 string characters out of 6176027
- 571161 words of memory out of 5000000
- 27134 multiletter control sequences out of 15000+600000
+ 24197 strings out of 494591
+ 473953 string characters out of 6176027
+ 579161 words of memory out of 5000000
+ 27394 multiletter control sequences out of 15000+600000
  67844 words of font info for 167 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
- 54i,12n,67p,793b,444s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,12n,67p,793b,1144s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gvv_bch.dvi (2 pages, 18968 bytes).
+Output written on gvv_bch.dvi (2 pages, 19904 bytes).
