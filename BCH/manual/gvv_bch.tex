@@ -251,7 +251,7 @@ BCH Codes
 This manual provides an introduction to BCH codes.
 \end{abstract}
 %
-\section{Introduction}
+\section{Generator Polynomial}
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
 \item For a BCH code, the minimal polynomials are given by 
@@ -279,15 +279,79 @@ Obtain the minimal polynomial matrix.
 \\
 \solution
 \begin{lstlisting}
-wget https://github.com/gadepall/EE6317/blob/master/BCH/codes/min_poly_mat.py
+https://raw.githubusercontent.com/gadepall/EE6317/master/BCH/codes/min_poly_mat.py
 \end{lstlisting}
 \item Obtain the generator polynomial vector.
+\\
 \solution The generator polynomial is obtained as
 \begin{align}
 g(x) =\prod_{i = 1}^{m}g_i(x)
 \end{align}
 %
-The following code computes $g$.
+The following code computes $\vec{g}$.
+\begin{lstlisting}
+https://raw.githubusercontent.com/gadepall/EE6317/master/BCH/codes/gen_poly.py
+\end{lstlisting}
+\end{enumerate}
+\section{Encoding}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+\item Let $\vec{m}$ be a $k \times 1$ message vector and  
+\begin{equation}
+m(x)=m_{k-1}x^{k-1}+m_{k-2}x^{k-2}+\dots+m_1x+m_0
+\end{equation} 
+be the  correspoding Message polynomial. 
+%\begin{equation}
+%g(x)=g_{n-k}x^{n-k}+g_{n-k-1}x^{n-k-1}+\dots+g_1x+g_0
+%\end{equation}
+%be the Generator polynomial.
+%\item Multiply the message polynomial $m(x)$ by $x^{n-k}$, then the message polynomial becomes,
+%\begin{equation}
+%m(x)x^{n-k}=m_{n-1}x^{n-1}+m_{n-2}x^{n-2}+\dots+m_1x+m_0
+%\end{equation}
+\item Let 
+\begin{equation}
+m(x)x^{n-k} = q(x)g(x)+d(x)
+\end{equation} 
+and 
+\begin{equation}
+c(x)=m(x)x^{n-k}+d(x)
+\end{equation}
+%
+Write a program to compute the corresponding coefficient vector $\vec{c}$. This is the output of the BCH 
+encoder.
+\end{enumerate}
+
+
+\section{Decoding}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+\item Let the Received polynomial be $r(x)$ i.e which contains both transmitted codeword polynomial $c(x)$ and 
+the 
+error polynomial $e(x)$ \begin{equation}
+e(x)=e_0+e_1x^1+...+e_{n-1}x^{n-1}
+\end{equation} Where $e_i$ represents the value of the error at the location. For binary BCH codes  $e_i$ is 
+either 0 or 1.
+\begin{equation}
+r(x)=c(x)+e(x)=r_{n-1}x^{n-1}+r_{n-2}x^{n-2}+\dots+r_1x+r_0
+\end{equation}
+Definie, Syndrome \begin{equation}
+S_i=r(\alpha^i)=c(\alpha^i)+e(\alpha^i)=e(\alpha^i)
+\end{equation} Where $\alpha^i $ is a root of the codeword.
+
+Suppose that $v$ errors occurred, and $0\leq v \leq t$.
+Let the error occurs at $i_1,i_2,\dots,i_v$. 
+
+
+
+
+The Decoding Process, for a t-error correcting code will follows the basic steps,
+\item Compute the Syndrome $S=(S_1,S_2,\dots,S_{2t})$ from the received polynomial $r(x)$
+\item Determine the error-location polynomial $\sigma(x)$ from the syndrome components $S_1,S_2,\dots,S_{2t}$ 
+using the Berlekamp's Algorithm.
+\item Using the Chain searching algorithm, determine the error-locations by finding the roots of $\sigma(x)$, 
+the flip the posisions in $r(x)$. Which is the estimated message vector polynomial $\hat{c}(x)$ .
+
 \item 
 where $\vec{w}$ is $p \times 1$ and $\vec{X}$ is $N \times p$.  Show that
 \begin{align}

@@ -25,4 +25,4 @@ def min_poly():
 	G=np.stack((p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12),axis=0)
 	return G
 
-print(min_poly())
+#print(min_poly())

@@ -18,4 +18,5 @@ def gen_poly():
 	c=c%2
 	return c
 
-print(gen_poly())
+#print(gen_poly())
+
