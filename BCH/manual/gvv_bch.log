@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  6 FEB 2019 17:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  7 FEB 2019 14:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1307,7 +1307,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-Overfull \hbox (9.14091pt too wide) detected at line 337
+Overfull \hbox (9.14091pt too wide) detected at line 341
 []\OML/txmi/m/it/12 r\OT1/txr/m/n/12 (\OML/txmi/m/it/12 x\OT1/txr/m/n/12 ) = \O
 ML/txmi/m/it/12 c\OT1/txr/m/n/12 (\OML/txmi/m/it/12 x\OT1/txr/m/n/12 ) + \OML/t
 xmi/m/it/12 e\OT1/txr/m/n/12 (\OML/txmi/m/it/12 x\OT1/txr/m/n/12 ) = \OML/txmi/
@@ -1316,19 +1316,19 @@ m/it/12 r[]x[] \OT1/txr/m/n/12 + \OML/txmi/m/it/12 r[]x[] \OT1/txr/m/n/12 + []
  []
 
 
-LaTeX Warning: Reference `eq:opt_mse' on page 2 undefined on input line 401.
+LaTeX Warning: Reference `eq:opt_mse' on page 2 undefined on input line 405.
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 403--404
+Underfull \hbox (badness 1975) in paragraph at lines 407--408
 []\OT1/txr/m/n/12 Repeat the ex-er-cise for the least squares
  []
 
 [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 406.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 406.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 410.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 410.
  (./gvv_bch.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 406.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 406.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 410.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 410.
 Package rerunfilecheck Info: File `gvv_bch.out' has not changed.
 (rerunfilecheck)             Checksum: B30A92D80BBBABAA3170485010F841A3;188.
 
@@ -1339,10 +1339,10 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  24199 strings out of 494591
  473975 string characters out of 6176027
- 579161 words of memory out of 5000000
+ 578161 words of memory out of 5000000
  27396 multiletter control sequences out of 15000+600000
  67844 words of font info for 167 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
  54i,12n,67p,793b,1150s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gvv_bch.dvi (2 pages, 26296 bytes).
+Output written on gvv_bch.dvi (2 pages, 26772 bytes).

@@ -288,7 +288,7 @@ https://raw.githubusercontent.com/gadepall/EE6317/master/BCH/codes/min_poly_mat.
 g(x) =\prod_{i = 1}^{m}g_i(x)
 \end{align}
 %
-The following code computes $\vec{g}$.
+The following code computes $\vec{g}$. What is the length of $\vec{g}$?
 \begin{lstlisting}
 https://raw.githubusercontent.com/gadepall/EE6317/master/BCH/codes/gen_poly.py
 \end{lstlisting}
@@ -300,7 +300,7 @@ https://raw.githubusercontent.com/gadepall/EE6317/master/BCH/codes/gen_poly.py
 \begin{equation}
 m(x)=m_{k-1}x^{k-1}+m_{k-2}x^{k-2}+\dots+m_1x+m_0
 \end{equation} 
-be the  correspoding Message polynomial. 
+be the  corresponding Message polynomial. 
 %\begin{equation}
 %g(x)=g_{n-k}x^{n-k}+g_{n-k-1}x^{n-k-1}+\dots+g_1x+g_0
 %\end{equation}
@@ -318,8 +318,12 @@ and
 c(x)=m(x)x^{n-k}+d(x)
 \end{equation}
 %
+\item If $k = 3072$ find the length of $\vec{c}$.
+\item 
 Write a program to compute the corresponding coefficient vector $\vec{c}$. This is the output of the BCH 
 encoder.
+\\
+\solution
 \end{enumerate}
 
 
