@@ -288,10 +288,14 @@ https://raw.githubusercontent.com/gadepall/EE6317/master/BCH/codes/min_poly_mat.
 g(x) =\prod_{i = 1}^{m}g_i(x)
 \end{align}
 %
+where $m=12$.
 The following code computes $\vec{g}$. What is the length of $\vec{g}$?
 \begin{lstlisting}
 https://raw.githubusercontent.com/gadepall/EE6317/master/BCH/codes/gen_poly.py
 \end{lstlisting}
+\item What is the maximum number of errors that can be corrected by $\vec{g}$?
+\\
+\solution $m = 12$.
 \end{enumerate}
 \section{Encoding}
 \begin{enumerate}[label=\thesection.\arabic*
@@ -324,12 +328,43 @@ Write a program to compute the corresponding coefficient vector $\vec{c}$. This 
 encoder.
 \\
 \solution
+\begin{lstlisting}
+https://raw.githubusercontent.com/gadepall/EE6317/master/BCH/codes/encoder.py
+\end{lstlisting}
 \end{enumerate}
 
 
-\section{Decoding}
+
+\section{Appendix}
+
+\section{Berlekamp's Decoding Algorithm}
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
+\item Define the syndrome polynomial $S(x)$
+\item Intialization : $k=0, \Lambda^{(0)}(x)=1,T^{(0)}=1$
+\item Let $\Delta^{(2k)}$ be the coefficient of $x^{2k+1}$ in $\Lambda^{(2k)}[1+S(x)]$ 
+\item Compute  
+\begin{equation}
+\Delta^{(2k+2)}(x)=\Lambda^{(2k)}(x) +\Delta^{(2k)}[x.T^{(2k)}(x)]
+\end{equation}
+\item Compute \begin{equation}
+    	T^{(2k+2)}(x) =
+    \begin{cases}
+    	x^2T^{(2k)}(x) & \text{if $\Delta^{(2k)}=0$ or deg}\sbrak{\Lambda^{(2k)}(x)}>k\\
+      \frac{x \Lambda^{(2k)}(x)}{\Delta^{(2k)}} & \text{if $\Delta^{(2k)}\neq 0$ or 
+deg}\sbrak{\Lambda^{(2k)}(x)}\leq k
+    \end{cases}
+  \end{equation}
+\item Set $k=k+1$.If $k<t$ then go to step3.
+\item Return the Error Locator polynomial $\Lambda(x)=\Lambda^{(2k)}(x)$
+\end{enumerate}
+\section{The Chien's Search Algorithm}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+\item Take $\alpha ^j$ as test root . $0\leq j \leq n-1$.
+\item if $\Lambda_i $ test every root and if its equals to zero. Then that is root.
+\item  Flip the bit values at root positions.
+
 \item Let the Received polynomial be $r(x)$ i.e which contains both transmitted codeword polynomial $c(x)$ and 
 the 
 error polynomial $e(x)$ \begin{equation}
