@@ -334,12 +334,24 @@ https://raw.githubusercontent.com/gadepall/EE6317/master/BCH/codes/encoder.py
 \end{enumerate}
 
 
-
-\section{Appendix}
-
 \section{Berlekamp's Decoding Algorithm}
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
+\item Find $t$ such that
+\begin{equation}
+n -k \le mt
+\end{equation}
+\solution Since $m = 12, n = 3240, k = 3072$,
+\begin{equation}
+t \ge \frac{n -k}{m} = 14
+\end{equation}
+\item Generate the elements table for $t=14$.
+\solution
+\item Find the number of elements in the element table for $t$.
+\solution 
+\solution The nuber of elements is 
+\item Let $\vec{r}$ be the received codeword (noisy). $r(x)$ is then defined to be the received polynomial.
+\item 
 \item Define the syndrome polynomial $S(x)$
 \item Intialization : $k=0, \Lambda^{(0)}(x)=1,T^{(0)}=1$
 \item Let $\Delta^{(2k)}$ be the coefficient of $x^{2k+1}$ in $\Lambda^{(2k)}[1+S(x)]$ 
