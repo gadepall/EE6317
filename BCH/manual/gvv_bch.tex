@@ -337,6 +337,8 @@ https://raw.githubusercontent.com/gadepall/EE6317/master/BCH/codes/encoder.py
 \section{Berlekamp's Decoding Algorithm}
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
+\item Find the number of minimal polynomials for $g(x)$.
+\solution This is given by $2m = 24$.
 \item Find $t$ such that
 \begin{equation}
 n -k \le mt
@@ -346,12 +348,31 @@ n -k \le mt
 t \ge \frac{n -k}{m} = 14
 \end{equation}
 \item Generate the elements table for $t=14$.
+\\
 \solution
-\item Find the number of elements in the element table for $t$.
-\solution 
-\solution The nuber of elements is 
-\item Let $\vec{r}$ be the received codeword (noisy). $r(x)$ is then defined to be the received polynomial.
-\item 
+\begin{lstlisting}
+wget https://raw.githubusercontent.com/gadepall/EE6317/master/BCH/codes/alpha_tables.py
+\end{lstlisting}
+
+\item Find the size of the elements table $\vec{A}$ for $t = 14$.
+\\
+\solution The size is given by
+\begin{equation}
+2^t-1 \times t = 16383 \times 14
+\end{equation}
+\item Let $\vec{\alpha}_i, 2 \le i \le 2m+1$ be the $i$th row of $\vec{A}$ and $\alpha_i(x)$ be the
+corresponding polynomial. Let $\vec{r}$ be the received codeword (noisy). $r(x)$ is then defined to be the 
+received polynomial. Find the correspondig syndromes. 
+\\
+\solution
+\begin{equation}
+S_i(x) = r\brak{\alpha_i(x)}
+\end{equation}
+\item Write a program to computer $\vec{S}$ given $\vec{r}$.
+\item Find the number of errors in $\vec{r}$.
+\\
+\solution The number of nonzero $S_i(x)$ is equal to the number of errors in $\vec{r}$.
+\item Write a program to compute the number of errors in $\vec{r}$.
 \item Define the syndrome polynomial $S(x)$
 \item Intialization : $k=0, \Lambda^{(0)}(x)=1,T^{(0)}=1$
 \item Let $\Delta^{(2k)}$ be the coefficient of $x^{2k+1}$ in $\Lambda^{(2k)}[1+S(x)]$ 

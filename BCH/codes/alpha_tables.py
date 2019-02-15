@@ -17,4 +17,4 @@ def alpha_lookup_tables(t):
 
 t = 14
 alpha=alpha_lookup_tables(t)
-print(np.shape(alpha))
+#print(np.shape(alpha))
