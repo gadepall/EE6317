@@ -338,6 +338,7 @@ https://raw.githubusercontent.com/gadepall/EE6317/master/BCH/codes/encoder.py
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
 \item Find the number of minimal polynomials for $g(x)$.
+\\
 \solution This is given by $2m = 24$.
 \item Find $t$ such that
 \begin{equation}
@@ -358,7 +359,7 @@ wget https://raw.githubusercontent.com/gadepall/EE6317/master/BCH/codes/alpha_ta
 \\
 \solution The size is given by
 \begin{equation}
-2^t-1 \times t = 16383 \times 14
+\brak{2^t-1} \times t = 16383 \times 14
 \end{equation}
 \item Let $\vec{\alpha}_i, 2 \le i \le 2m+1$ be the $i$th row of $\vec{A}$ and $\alpha_i(x)$ be the
 corresponding polynomial. Let $\vec{r}$ be the received codeword (noisy). $r(x)$ is then defined to be the 
@@ -368,7 +369,13 @@ received polynomial. Find the correspondig syndromes.
 \begin{equation}
 S_i(x) = r\brak{\alpha_i(x)}
 \end{equation}
-\item Write a program to computer $\vec{S}$ given $\vec{r}$.
+\item Write a program to compute the matrix $\vec{S}$ given $\vec{r}$.
+\\
+\solution
+\begin{lstlisting}
+wget https://raw.githubusercontent.com/gadepall/EE6317/master/BCH/codes/syndromes_calc.py
+\end{lstlisting}
+
 \item Find the number of errors in $\vec{r}$.
 \\
 \solution The number of nonzero $S_i(x)$ is equal to the number of errors in $\vec{r}$.
