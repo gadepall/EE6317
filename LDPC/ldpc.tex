@@ -22,7 +22,6 @@
 %\usepackage{amsthm}
 \interdisplaylinepenalty=2500
 %\savesymbol{iint}
-%\usepackage{tikz}
 %\usepackage{txfonts}
 %\restoresymbol{TXF}{iint}
 \usepackage{wasysym}
@@ -45,10 +44,10 @@
 \usepackage{enumitem}
 \usepackage{mathtools}
 %\usepackage{iithtlc}
-%\usepackage[framemethod=tikz]{mdframed}
 \usepackage{tikz}
-\usetikzlibrary{positioning}
-\usepackage{listings}
+\usetikzlibrary{shapes,arrows}
+%\usetikzlibrary{arrows.meta,calc,positioning}
+%\usepackage[framemethod=tikz]{mdframed}
 \usepackage{listings}
     \usepackage[latin1]{inputenc}                                 %%
     \usepackage{color}                                            %%
@@ -117,7 +116,13 @@ columns=fullflexible
 
 \begin{document}
 %
-
+\tikzstyle{block} = [rectangle, draw,
+text width=7em, text centered, minimum height=4em]
+\tikzstyle{sum} = [draw, circle, node distance=3cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+\tikzstyle{line} = [draw, -latex']
 \theoremstyle{definition}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{problem}{Problem}
@@ -393,34 +398,80 @@ Lets assume that we have initilized all LLR values to variable nodes and we sent
 \label{fig : check}
 \end{figure}
 since parity node equation for the first check node is $p_0=m_0+m_1+m_2+m_4$. we need to calculate
-\begin{equation}\label{eq:sub}
-\log \brak{\frac{1-\frac{1-p_0}{p_0}}{1-\frac{1-p_0}{p_0}}}
+\begin{align}
+L_{ext0,0} &= \log \brak{\frac{Pr(x_0 =0 | y_1,y_2,y_4)}{Pr(x_0 =1| y_1,y_2,y_4)}}
+\end{align}
+Defining,
+\begin{align}
+L_1 &= \log \brak{\frac{Pr(x_1 =0 | y_1)}{Pr(x_1 =1| y_1)}} = \log \brak{\frac{p_1}{1-p_1}} \\
+L_2 &= \log \brak{\frac{Pr(x_2 =0 | y_2)}{Pr(x_2 =1| y_2)}}=\log \brak{\frac{p_2}{1-p_2}} \\
+L_4 &= \log \brak{\frac{Pr(x_4 =0 | y_4)}{Pr(x_4 =1| y_4)}}= \log \brak{\frac{p_4}{1-p_4}} \\
+\end{align}
+\begin{table}[!ht]
+\begin{center}
+{\tiny
+\input{./figs/ptable.tex}
+}
+\end{center}
+\caption{Probability of a varibale node from other check nodes}
+\label{table:type}
+\end{table}
+Using Table. \ref{table:type} we can find the 
+\begin{equation}
+p_0=Pr(c_0=0|c_1,c_2,c_4)
 \end{equation}
+\begin{align*}
+p_0 &= p_1p_2p_4 + p_1(1-p_2)(1-p_4)\\
+&+(1-p_1)p_2(1-p_4)
++(1-p_1)(1-p_2)p_4\\
+1-p_0 &=p_1p_2(1-p_4) + p_1(1-p_2)p_4\\
+&+(1-p_1)p_2p_4+(1-p_1)(1-p_2)(1-p_4)\\
+\end{align*}
+by rearranging above equations,
+\begin{equation}
+p_0 - (1-p_0) = p_1 -(1-p_1) + p_2 - (1-p_2) + p_4 -(1- p_4)
+\end{equation}
+%\begin{equation}\label{eq:sub}
+%\log \brak{\frac{1-\frac{1-p_0}{p_0}}{1+\frac{1-p_0}{p_0}}}
+%\end{equation}
+
 Where $p_i$ is the probability. getting message from check to variable node by taking all variable node informations.
 \begin{align}
-\frac{1-\frac{1-p_0}{p_0}}{1-\frac{1-p_0}{p_0}} & = \frac{1-\frac{1-p_1}{p_1}}{1-\frac{1-p_1}{p_1}} \times \frac{1-\frac{1-p_2}{p_2}}{1-\frac{1-p_2}{p_2}} \times \frac{1-\frac{1-p_4}{p_4}}{1-\frac{1-p_4}{p_4}}\\
-\frac{1-e^{-L_{ext0,0}}}{1+e^{-L_{ext0,0}}} &=\frac{1-e^{-L_{ext1,0}}}{1+e^{-L_{ext1,0}}}\times \frac{1-e^{-L_{ext2,0}}}{1+e^{-L_{ext2,0}}} \times \frac{1-e^{-L_{ext4,0}}}{1+e^{-L_{ext4,0}}}\\ \nonumber
-\tanh \brak{\frac{L{ext0,0}}{2}}& =\tanh \brak{\frac{L{ext1,0}}{2}}\tanh \brak{\frac{L{ext2,0}}{2}}\\ \label{eq :first}
-&\tanh \brak{\frac{L{ext4,0}}{2}} 
+\frac{1-\frac{1-p_0}{p_0}}{1+\frac{1-p_0}{p_0}} & = \frac{1-\frac{1-p_1}{p_1}}{1+\frac{1-p_1}{p_1}} \times \frac{1-\frac{1-p_2}{p_2}}{1+\frac{1-p_2}{p_2}} \times \frac{1-\frac{1-p_4}{p_4}}{1+\frac{1-p_4}{p_4}}\\
+\frac{1-e^{-L_{ext0,0}}}{1+e^{-L_{ext0,0}}} &=\frac{1-e^{-L_{1}}}{1+e^{-L_{1}}}\times \frac{1-e^{-L_{2}}}{1+e^{-L_{2}}} \times \frac{1-e^{-L_{4}}}{1+e^{-L_{4}}}\\ \nonumber
+-\tanh \brak{\frac{L_{ext0,0}}{2}}& =\brak{-\tanh \brak{\frac{L_{1}}{2}}}\brak{-\tanh \brak{\frac{L_{2}}{2}}}\\
+&\brak{ -\tanh \brak{\frac{L_{4}}{2}} }
 \end{align}
-
-by substituting \eqref{eq :first} in \eqref{eq:sub} we get,
 \begin{align}
-\log \tanh \brak{\frac{L{ext0,0}}{2}} & = \log \tanh \brak{\frac{L{ext1,0}}{2}} +  \log \tanh \brak{\frac{L{ext2,0}}{2}}\\
-& + \log \tanh \brak{\frac{L{ext4,0}}{2}}\\
+\tanh \brak{\frac{L_{ext0,0}}{2}} &=\sbrak{\prod_{k \in V_j \setminus i}\alpha_{k,0}}\sbrak{\prod_{k \in V_j \setminus i} \tanh \brak{\frac{\beta_{k,0}}{2}}}\\
+L_{ext0,0}  &=\brak{\prod_{k \in V_j \setminus i}\alpha_{k,0}}2 tanh^{-1}\brak{\prod_{k \in V_j \setminus i} \tanh \brak{\frac{\beta_{k,0}}{2}}}\\
+&=\brak{\prod_{k \in V_j \setminus i}\alpha_{k,0}}\\
+&2 tanh^{-1}\log^- \log\brak{\prod_{k \in V_j \setminus i} \tanh \brak{\frac{\beta_{k,0}}{2}}}\\
+&=\brak{\prod_{k \in V_j \setminus i}\alpha_{k,0}}\\
+&2 tanh^{-1}\log^{-1}\brak{\sum_{k \in V_j \setminus i} \log \tanh \brak{\frac{\beta_{k,0}}{2}}}\\
+L_{ext0,0}&=\brak{\prod_{k \in V_j \setminus i}\alpha_{k,0}} f\brak{\sum_{k \in V_j \setminus i}f\brak{\beta_{k,0}}} \label{eq:main}
 \end{align}
-\begin{equation}
-sign(L_{ext0,0})= sign(L_{ext1,0})sign(L_{ext2,0})sign(L_{ext4,0})\\
-\end{equation}
+Where,
 \begin{align}
-\tanh \brak{\frac{\abs{L_{ext0,0}}}{2}} &=\tanh \brak{\frac{\abs{L_{ext1,0}}}{2}}\tanh \brak{\frac{\abs{L_{ext2,0}}}{2}}\\
-&\tanh \brak{\frac{\abs{L_{ext4,0}}}{2}}
+\alpha_{k,j}&=sign(L_{k,j})\\
+\beta_{k,j}&=\abs{L_{k,j}}\\
+f(x)&= - \log \brak{\tanh{\frac{x}{2}}}
 \end{align}
-Using minsum algorithm \cite{minsum}
+ \begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=\columnwidth]{./figs/fxgraph}
+\caption{Plot of function $f(x)$}
+\label{fig : fx}
+\end{center}
+\end{figure}
+Using the Fig \ref{fig : fx} and using its $45^\circ$ symmetricity, we can approximate the above equation as, given by minimum sum approximation \cite{minsum} 
 \begin{align}
-L(r_{j=0,i=0}) &= sign(L(1))\times sign(L(2))\times sign(L(4))\\ \nonumber
-&\times \min \brak{\abs{L(1)},\abs{L(2)},\abs{L(4)}} \\\nonumber
-&=\sbrak{\prod_{k \in V_j \setminus i} sign(L(q_{kj}))} \min_{k \in V_j \setminus i} \abs{L(q_{kj})}\\ \label{eq : rji}
+f\brak{\sum_{k \in V_j \setminus i}f\brak{\beta_{k,0}}} &\approx f\brak{f\brak{\min_{k \in V_j \setminus i}\brak{\beta_{k,0}}}}\\
+&=\min_{k \in V_j \setminus i}\brak{\beta_{k,0}} \label{eq: minsumapp}
+\end{align}
+Combining \eqref{eq: minsumapp} in \eqref{eq:main},
+\begin{align}
+L(r_{j=0,i=0}) &=\brak{\prod_{k \in V_j \setminus i}\alpha_{k,0}} \brak{\min_{k \in V_j \setminus i}\brak{\beta_{k,0}}} \label{eq:rji}
 \end{align}
 %
 \item Variable Node Operation :\\
@@ -457,7 +508,7 @@ Let ${C_i}$ denotes all the check nodes connected to $i^{th}$ variable node. The
 \begin{align}
 L(q_{i=0,j=0})&=\log \brak{\frac{Pr(x_j=1|y_0,y_1,y_2)}{Pr(x_j=-1|y_0,y_1,y_2)}} \quad X=1-2c\\
 &= \log \brak{\frac{f(y_0,y1,y_2|x_j=1)Pr(x_j=1)}{f(y_0,y_1,y_2|x_j=-1)Pr(x_j=-1)}} \\
-&= \log \brak{\frac{\frac{1}{\sqrt{2\pi\sigma^2}}e^{\frac{-(y_0-1)^2}{2\sigma^2}}\frac{1}{\sqrt{2\pi\sigma^2}}e^{\frac{-(y_1-1)^2}{2\sigma^2}}\frac{1}{\sqrt{2\pi\sigma^2}}e^{\frac{-(y_2-1)^2}{2\sigma^2}}}{\frac{1}{\sqrt{2\pi\sigma^2}}e ^{\frac{-(y_0+1)^2}{2\sigma^2}}\frac{1}{\sqrt{2\pi\sigma^2}}e ^{\frac{-(y_1+1)^2}{2\sigma^2}}\frac{1}{\sqrt{2\pi\sigma^2}}e ^{\frac{-(y_2+1)^2}{2\sigma^2}} }  } \\
+&= \log \brak{\frac{\brak{\frac{1}{\sqrt{2\pi\sigma^2}}}^3e^{\frac{-(y_0-1)^2}{2\sigma^2}}e^{\frac{-(y_1-1)^2}{2\sigma^2}}e^{\frac{-(y_2-1)^2}{2\sigma^2}}}{\brak{\frac{1}{\sqrt{2\pi\sigma^2}}}^3e ^{\frac{-(y_0+1)^2}{2\sigma^2}}e ^{\frac{-(y_1+1)^2}{2\sigma^2}}e ^{\frac{-(y_2+1)^2}{2\sigma^2}} }  } \\
 &=\log \brak{e^{\frac{2(y_0+y_1+y_2)}{\sigma^2}}} \\
 L(q_{i=0,j=0})&= \frac{2(y_0+y_1+y_2)}{\sigma^2}=L(x_i)+\sum_{k \in C_i\setminus j} L(r_{ki}) \label{eq: qij}
 \end{align}
@@ -468,7 +519,7 @@ Transmitted frames = N, Total number of bits = N $\times$ 7 and Total number of 
 For Each Frame,
 \begin{enumerate}
 \item Initialize $L(q_{ij})$ using \eqref{eq :li} for all $i,j$ for which $h_{ij}=1$ with channel LLR's.
-\item Update $\cbrak{L(r_{ji})}$ using \eqref{eq : rji}.
+\item Update $\cbrak{L(r_{ji})}$ using \eqref{eq:rji}
 \item Update $\cbrak{L(q_{ji})}$ using \eqref{eq: qij}.
 \item Update $\cbrak{L(V_i)}$ using,
 \begin{equation}
