@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.1.31)  10 JUN 2019 13:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.1.31)  19 JUN 2019 12:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -948,7 +948,12 @@ LaTeX Font Info:    Try loading font information for U+txsyc on input line 236.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
-) (./ldpc.toc)
+) (./ldpc.toc
+Underfull \hbox (badness 10000) in paragraph at lines 9--9
+ [][] []\OT1/txr/m/n/12 Approximated LLR's for 
+ []
+
+)
 \tf@toc=\write4
 \openout4 = `ldpc.toc'.
 
@@ -962,8 +967,7 @@ Package epstopdf Info: Source file: <./figs/tanner.eps>
 d-to.pdf ./figs/tanner.eps>
 (epstopdf)             \includegraphics on input line 319.
 Package epstopdf Info: Output file is already uptodate.
-
-<./figs/tanner-eps-converted-to.pdf, id=4, 630.355pt x 646.415pt>
+ <./figs/tanner-eps-converted-to.pdf, id=4, 630.355pt x 646.415pt>
 File: ./figs/tanner-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figs/tanner-eps-converted-to.pdf>
@@ -971,7 +975,7 @@ Package pdftex.def Info: ./figs/tanner-eps-converted-to.pdf used on input line
 319.
 (pdftex.def)             Requested size: 252.0pt x 258.42332pt.
 
-Underfull \vbox (badness 2961) has occurred while \output is active []
+Underfull \vbox (badness 1648) has occurred while \output is active []
 
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -1017,6 +1021,8 @@ OMS/txsy/m/n/12 ^^@ \OT1/txr/m/n/12 (1 \OMS/txsy/m/n/12 ^^@ \OML/txmi/m/it/12 p
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2 <./figs/checkope-eps-converted-to.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 Package epstopdf Info: Source file: <./figs/fxgraph.eps>
 (epstopdf)                    date: 2019-06-10 13:04:05
 (epstopdf)                    size: 36577 bytes
@@ -1035,9 +1041,6 @@ File: ./figs/fxgraph-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./figs/fxgraph-eps-converted-to.pdf used on input line
  462.
 (pdftex.def)             Requested size: 252.0pt x 168.00174pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 Package epstopdf Info: Source file: <./figs/varope.eps>
 (epstopdf)                    date: 2019-06-04 12:39:10
 (epstopdf)                    size: 167458 bytes
@@ -1061,7 +1064,10 @@ Overfull \hbox (5.5127pt too wide) in paragraph at lines 514--514
 [] 
  []
 
-[3 <./figs/fxgraph-eps-converted-to.pdf> <./figs/varope-eps-converted-to.pdf>]
+
+Underfull \vbox (badness 2932) has occurred while \output is active []
+
+ [3 <./figs/fxgraph-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./figs/ber.eps>
 (epstopdf)                    date: 2019-06-04 12:39:10
 (epstopdf)                    size: 33278 bytes
@@ -1073,41 +1079,83 @@ o.pdf ./figs/ber.eps>
 (epstopdf)             \includegraphics on input line 544.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/ber-eps-converted-to.pdf, id=69, 562.1pt x 421.575pt>
+<./figs/ber-eps-converted-to.pdf, id=66, 562.1pt x 421.575pt>
 File: ./figs/ber-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figs/ber-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs/ber-eps-converted-to.pdf used on input line 544
 .
 (pdftex.def)             Requested size: 252.0pt x 188.99939pt.
+ [4 <./figs/varope-eps-converted-to.pdf> <./figs/ber-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./figs/qpsk.eps>
+(epstopdf)                    date: 2019-05-10 10:13:26
+(epstopdf)                    size: 1494125 bytes
+(epstopdf)             Output file: <./figs/qpsk-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-19 12:00:13
+(epstopdf)                    size: 30754 bytes
+(epstopdf)             Command: <repstopdf --outfile=./figs/qpsk-eps-converted-
+to.pdf ./figs/qpsk.eps>
+(epstopdf)             \includegraphics on input line 581.
+Package epstopdf Info: Output file is already uptodate.
+
+<./figs/qpsk-eps-converted-to.pdf, id=78, 595.22375pt x 414.54875pt>
+File: ./figs/qpsk-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ./figs/qpsk-eps-converted-to.pdf>
+Package pdftex.def Info: ./figs/qpsk-eps-converted-to.pdf used on input line 58
+1.
+(pdftex.def)             Requested size: 252.0pt x 175.50722pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 586--586
+ \OT1/txr/m/it/12 C. Ap-prox-i-mated LLR's for 8-PSK Map-ping
+ []
+
+Package epstopdf Info: Source file: <./figs/8psk.eps>
+(epstopdf)                    date: 2019-05-10 10:13:26
+(epstopdf)                    size: 1763083 bytes
+(epstopdf)             Output file: <./figs/8psk-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-19 12:00:13
+(epstopdf)                    size: 36505 bytes
+(epstopdf)             Command: <repstopdf --outfile=./figs/8psk-eps-converted-
+to.pdf ./figs/8psk.eps>
+(epstopdf)             \includegraphics on input line 599.
+Package epstopdf Info: Output file is already uptodate.
+<./figs/8psk-eps-converted-to.pdf, id=79, 684.5575pt x 425.59pt>
+File: ./figs/8psk-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ./figs/8psk-eps-converted-to.pdf>
+Package pdftex.def Info: ./figs/8psk-eps-converted-to.pdf used on input line 59
+9.
+(pdftex.def)             Requested size: 252.0pt x 156.66707pt.
  (./ldpc.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 25--27
 []\OT1/txr/m/n/9 R.Gallager, ``Low-density par-ity check codes,'' \OT1/txr/m/it
 /9 IRE
  []
 
-) [4 <./figs/ber-eps-converted-to.pdf>] (./ldpc.aux) ) 
+) [5 <./figs/qpsk-eps-converted-to.pdf> <./figs/8psk-eps-converted-to.pdf>]
+(./ldpc.aux) ) 
 Here is how much of TeX's memory you used:
- 18076 strings out of 493304
- 338496 string characters out of 6139871
- 429312 words of memory out of 5000000
- 21081 multiletter control sequences out of 15000+600000
- 83905 words of font info for 191 fonts, out of 8000000 for 9000
+ 18101 strings out of 493304
+ 338982 string characters out of 6139871
+ 429334 words of memory out of 5000000
+ 21103 multiletter control sequences out of 15000+600000
+ 86393 words of font info for 201 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
  56i,15n,56p,424b,499s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf
--dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfont
-s/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxsc.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
-utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ldpc.pdf (4 pages, 142487 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/
+share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/txfonts/rtxsc.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/tx
+fonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/urw/times/utmri8a.pfb>
+Output written on ldpc.pdf (5 pages, 213788 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 119 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 48 words of extra memory for PDF output out of 10000 (max. 10000000)
 

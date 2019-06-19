@@ -29,4 +29,22 @@ R.Gallager, ``{Low-density parity check codes},'' \emph{IRE Trans.Information
 N.~Wiberg, ``{Codes and Decoding on General Graphs},'' \emph{Phd
   Dissertation,Linkoping University,Sweden}, 1996.
 
+\bibitem{llr}
+\BIBentryALTinterwordspacing
+V.~B. {Olivatto}, R.~R. {Lopes}, and E.~R. {de Lima}, ``{Simplified LLR
+  calculation for DVB-S2 LDPC decoder},'' in \emph{2015 IEEE International
+  Conference on Communication, Networks and Satellite (COMNESTAT)}, Dec 2015,
+  pp. 26--31. [Online]. Available:
+  \url{https://doi.org/10.1109/COMNETSAT.2015.7434300}
+\BIBentrySTDinterwordspacing
+
+\bibitem{max-log}
+\BIBentryALTinterwordspacing
+M.~{Martina}, G.~{Masera}, S.~{Papaharalabos}, P.~T. {Mathiopoulos}, and
+  F.~{Gioulekas}, ``{On Practical Implementation and Generalizations of $
+  \max^{\ast}$ Operator for Turbo and LDPC Decoders},'' \emph{IEEE Transactions
+  on Instrumentation and Measurement}, vol.~61, no.~4, pp. 888--895, April
+  2012. [Online]. Available: \url{https://doi.org/10.1109/TIM.2011.2173045}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}

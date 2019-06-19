@@ -241,7 +241,7 @@ of Electrical Engineering, Indian Institute of Technology, Hyderabad
 %
 \begin{abstract}
 \boldmath
-A brief description about the design and implementataion of LDPC codes using (7,4) Hamming parity check matrix.
+A brief description about the design and implementataion of LDPC codes using (7,4) Hamming parity check matrix. Calculation of LLR's for higher order mapping schemes are decribed by taking examples of QPSK and 8-SPK.
 \end{abstract}
 
 
@@ -537,7 +537,7 @@ Decoding can be done using,
 \end{cases}
 \end{equation}
 %
-\section{Results}
+\subsection{Simulation Results}
 For frames N=10000.
  \begin{figure}[!ht]
 \begin{center}
@@ -548,6 +548,59 @@ For frames N=10000.
 \end{figure}
 Fig \ref{fig : ber} Shows the Comparison of Probability error with channel coding and without channel coding. Since the parity check matrix taken was not much sparse, we are not getting near shannon limit performance. (Good sparse matrix i.e number of entries in H $<< m\times n $ )
 
+\section{LDPC Decoding for Higher Order Mapping Schemes}
+In the case of higher order mapping schemes, calculation of Log Likelihood Ratio's are crutial. A generalized and approximated Log Likelihood Ratio given by \cite{llr}
+\subsection{General Expression for Calculation of Log Likelihood Ratio(LLR)}
+\begin{align}
+LLR(b_j)&= \log \brak{\frac{Pr(b_j=0|y)}{Pr(b_j=1|y)}}\\
+LLR(b_j)&=\log \brak{\frac{\sum_{i\in \cbrak{K_{b_j=0}}}\frac{1}{2\sigma^2}e^{\frac{-\abs{y-x_i}^2}{2\sigma^2}}}{\sum_{i\in \cbrak{K_{b_j=1}}}\frac{1}{2\sigma^2}e^{\frac{-\abs{y-x_i}^2}{2\sigma^2}}}}
+\end{align}
+Where the alphabet $\cbrak{K_{b_j=b}}$ is the set of all symbols representing the $j^{th}$ bit equals to $b=0$ or $b=1$.
+
+\begin{equation}
+\log \brak{e^a+e^b}\approx \max \brak{a,b}
+\end{equation}
+Shows the Jacobian-Logarithmic approximation using \cite{max-log}.
+By Using the Above equation,
+The LLR expression can be written as,
+\begin{align}
+LLR(b_j)&\approx \max_{i\in \cbrak{K_{b_j=0}}}\brak{e^{\frac{-\abs{y-x_i}^2}{2\sigma^2}}} -\max_{i\in \cbrak{K_{b_j=1}}}\brak{e^{\frac{-\abs{y-x_i}^2}{2\sigma^2}}}
+\end{align}
+\subsection{Approximated LLR's for QPSK Mapping Scheme}
+For the QPSK mapping scheme showed in Fig. \ref{fig : qpsk} is grey code constellation and  $b_1,b_0$ are the MSB and LSB of the mapped symbols.
+\begin{align}
+LLR(b_1)&\approx \max \brak{L_0,L_1} -\max \brak{L_3,L_2} \\
+LLR(b_0)&\approx \max \brak{L_0,L_2} -\max \brak{L_1,L_3}
+\end{align}
+Where,
+\begin{align}
+L_i = e^{-\frac{\abs{y-x_i}^2}{2\sigma^2}} \quad i=0,1,2,3
+\end{align}
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=\columnwidth]{./figs/qpsk}
+\caption{Constellation Diagram of QPSK}
+\label{fig : qpsk}
+\end{center}
+\end{figure}
+\subsection{Approximated LLR's for 8-PSK Mapping Scheme}
+For the 8-PSK mapping scheme showed in Fig. \ref{fig : 8psk} is grey code constellation and  $b_2,b_0$ are the MSB and LSB of the mapped symbols.
+\begin{align}
+LLR(b_2)&\approx \max \brak{L_0,L_1,L_3,L_2} -\max \brak{L_6,L_7,L_5,L_4} \\
+LLR(b_1)&\approx \max \brak{L_0,L_1,L_5,L_4} -\max \brak{L_3,L_2,L_6,L_7}\\
+LLR(b_0)&\approx \max \brak{L_0,L_2,L_6,L_4} -\max \brak{L_1,L_3,L_7,L_5}
+\end{align}
+Where,
+\begin{align}
+L_i = e^{-\frac{\abs{y-x_i}^2}{2\sigma^2}} \quad i=0,1,\dots,7
+\end{align}
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=\columnwidth]{./figs/8psk}
+\caption{Constellation Diagram of 8-PSK}
+\label{fig : 8psk}
+\end{center}
+\end{figure}
 \bibliography{IEEEabrv,ldpc.bib}
 \end{document}
 
