@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Termux) (preloaded format=latex 2019.6.30)  26 JUL 2019 11:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Termux) (preloaded format=latex 2019.7.16)  23 AUG 2019 08:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1013,41 +1013,41 @@ Package caption Info: End \AtBeginDocument code.
 \c@example=\count164
 \c@definition=\count165
 \c@rem=\count166
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 236.
-LaTeX Font Info:    Try loading font information for U+wasy on input line 236.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 238.
+LaTeX Font Info:    Try loading font information for U+wasy on input line 238.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwa
 sy.fd
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 236.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 238.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ur
 sfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+txmia on input line 236.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 238.
 
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/utx
 mia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsya on input line 236.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 238.
 
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/utx
 sya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 236.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 238.
 
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/utx
 syb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 236.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 238.
 
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/utx
@@ -1063,16 +1063,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--9
 \openout4 = `ldpc.toc'.
 
 File: ./figs/tanner.eps Graphic file (type eps)
- <./figs/tanner.eps>
-Underfull \vbox (badness 1648) has occurred while \output is active []
-
- [1
+ <./figs/tanner.eps> [1
 
 
 ]
 File: ./figs/checkope.eps Graphic file (type eps)
-
-<./figs/checkope.eps> (./figs/ptable.tex
+ <./figs/checkope.eps> (./figs/ptable.tex
 \gnumericTableWidth=\skip68
 \gnumericTableWidthComplete=\skip69
 \gnumericMultiRowLength=\skip70
@@ -1081,12 +1077,12 @@ File: ./figs/checkope.eps Graphic file (type eps)
 \gnumericColC=\skip73
 \gnumericColD=\skip74
 )
-Overfull \hbox (4.52466pt too wide) detected at line 429
+Overfull \hbox (4.52466pt too wide) detected at line 431
 []
  []
 
 
-Overfull \hbox (9.7864pt too wide) detected at line 433
+Overfull \hbox (9.7864pt too wide) detected at line 435
 \OML/txmi/m/it/12 p[] \OMS/txsy/m/n/12 ^^@ \OT1/txr/m/n/12 (1 \OMS/txsy/m/n/12 
 ^^@ \OML/txmi/m/it/12 p[]\OT1/txr/m/n/12 ) = \OML/txmi/m/it/12 p[] \OMS/txsy/m/
 n/12 ^^@ \OT1/txr/m/n/12 (1 \OMS/txsy/m/n/12 ^^@ \OML/txmi/m/it/12 p[]\OT1/txr/
@@ -1100,12 +1096,12 @@ OMS/txsy/m/n/12 ^^@ \OT1/txr/m/n/12 (1 \OMS/txsy/m/n/12 ^^@ \OML/txmi/m/it/12 p
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-Overfull \hbox (6.3206pt too wide) detected at line 444
+Overfull \hbox (6.3206pt too wide) detected at line 446
 []
  []
 
 
-Overfull \hbox (23.42627pt too wide) detected at line 453
+Overfull \hbox (23.42627pt too wide) detected at line 455
 []
  []
 
@@ -1117,7 +1113,7 @@ File: ./figs/fxgraph.eps Graphic file (type eps)
 <./figs/fxgraph.eps>
 File: ./figs/varope.eps Graphic file (type eps)
  <./figs/varope.eps>
-Overfull \hbox (29.5127pt too wide) detected at line 514
+Overfull \hbox (29.5127pt too wide) detected at line 516
 []
  []
 
@@ -1130,7 +1126,7 @@ File: ./figs/ber.eps Graphic file (type eps)
 <./figs/ber.eps> [4]
 File: ./figs/qpsk.eps Graphic file (type eps)
  <./figs/qpsk.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 586--586
+Underfull \hbox (badness 10000) in paragraph at lines 588--588
  \OT1/txr/m/it/12 C. Ap-prox-i-mated LLR's for 8-PSK Map-ping
  []
 
@@ -1141,18 +1137,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--27
 /9 IRE
  []
 
-) [5] (./ldpc.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+) [5] (./ldpc.aux) ) 
 Here is how much of TeX's memory you used:
- 19641 strings out of 492615
- 401019 string characters out of 6118492
- 474889 words of memory out of 5000000
- 23162 multiletter control sequences out of 15000+600000
- 68385 words of font info for 173 fonts, out of 8000000 for 9000
+ 19643 strings out of 492624
+ 401038 string characters out of 6119216
+ 474845 words of memory out of 5000000
+ 23163 multiletter control sequences out of 15000+600000
+ 68974 words of font info for 174 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  55i,15n,67p,415b,492s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ldpc.dvi (5 pages, 39080 bytes).
+Output written on ldpc.dvi (5 pages, 39196 bytes).

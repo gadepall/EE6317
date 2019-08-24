@@ -167,6 +167,7 @@ text width=7em, text centered, minimum height=4em]
 \providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
 	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
 \newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
 \providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 %\numberwithin{equation}{subsection}
@@ -199,6 +200,7 @@ text width=7em, text centered, minimum height=4em]
 
 \let\StandardTheFigure\thefigure
 \let\StandardTheTable\thetable
+\let\vec\mathbf
 %%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
 %\renewcommand{\thefigure}{\theproblem}
 
@@ -241,7 +243,7 @@ of Electrical Engineering, Indian Institute of Technology, Hyderabad
 %
 \begin{abstract}
 \boldmath
-A brief description about the design and implementataion of LDPC codes using (7,4) Hamming parity check matrix. Calculation of LLR's for higher order mapping schemes are decribed by taking examples of QPSK and 8-SPK.
+A brief description of the design and implementataion of LDPC codes using (7,4) Hamming parity check matrix is provided. Calculation of LLR's for higher order mapping schemes are decribed by taking examples of QPSK and 8-SPK.
 \end{abstract}
 
 
@@ -252,10 +254,10 @@ Let the Channel model be,
 \begin{equation}
 Y_k= X_k + V_k, \quad k = 0,\dots,6
 \end{equation} 
-where $X_k$ is the  transmitted symbol in the $k$th time slot using the BPSK modulation and $V_k(m) \sim \mathcal{N}\brak{0,\sigma^2} $. 
+where $X_k$ is the  transmitted symbol in the $k$th time slot using the BPSK modulation and $V_k \sim \mathcal{N}\brak{0,\sigma^2} $. 
 
 \section{Encoding}
- LDPC codes are popular linear block codes with closest shannon limt channel capacity \cite{ldpc}. As an example Lets take (7,4) Hamming parity check matrix.
+ LDPC codes are popular linear block codes with closest Shannon limit channel capacity \cite{ldpc}. As an example, lets take (7,4) Hamming parity check matrix.
  \begin{equation} \label{eq:H}
  H =  \begin{bmatrix} 
 1 & 1 & 1 & 0 & 1 & 0 & 0 \\
@@ -264,7 +266,7 @@ where $X_k$ is the  transmitted symbol in the $k$th time slot using the BPSK mod
 \end{bmatrix}
  \end{equation}
 
-Above $H$ matrix having the parameters, information bits $k=4$ i.e $m=m_0,\dots,m_3$ , parity bits are $m=n-k=3$ i.e $p=[p_0,p_1,p_2]$ and  code word length $n=7$ i.e $c=[m\hspace{1mm}p]$.
+The above $H$ matrix has $k=4$ i.e $\vec{m}=\myvec{m_0 &\dots & m_3}$ information bits  and $m=n-k=3$ i.e $\vec{p}=\myvec{p_0 &p_1 &p_2}$ parity bits. The code word length $n=7$ i.e $\vec{c}=\myvec{\vec{m} & \vec{p}}$.
 \begin{figure}[!ht]
 \begin{center}
 %\begin{tikzpicture}
